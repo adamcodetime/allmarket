@@ -9,3 +9,9 @@
     text-align: center;
     font-style: italic;
 }
+hr {
+    border: 2px dashed #888;
+}
+body {
+    background-color: aliceblue;
+}
