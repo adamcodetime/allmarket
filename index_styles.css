@@ -1,3 +1,7 @@
 * {
     font-family: 'Courier New', Courier, monospace;
 }
+.am-title {
+    font-weight: bolder;
+    text-align: center;
+}
