@@ -1,10 +1,35 @@
 let title = document.getElementById("am-title");
-let title_state = false;
-setInterval(function() {
-    if (title_state == false) {
-        title.innerHTML = "Facebook";
-    } else if (title_state == true) {
-        title.innerHTML = "AllMarket";
+
+const words = ["AllMarket"];
+let i = 0;      // which word
+let j = 0;      // which letter
+let deleting = false;
+
+function loop() {
+    let current = words[i];
+
+    if (!deleting) {
+        // typing forward
+        title.innerHTML = current.slice(0, j + 1);
+        j++;
+
+        if (j === current.length) {
+            deleting = true;
+            setTimeout(loop, 800); // pause before deleting
+            return;
+        }
+    } else {
+        // deleting backward
+        title.innerHTML = current.slice(0, j - 1);
+        j--;
+
+        if (j === 0) {
+            deleting = false;
+            i = (i + 1) % words.length; // next word
+        }
     }
-    title_state = !title_state;
-}, 2000)
+
+    setTimeout(loop, 100); // typing speed
+}
+
+loop();

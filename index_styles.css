@@ -5,13 +5,17 @@
     font-weight: bolder;
     text-align: center;
 }
-.am-quote {
-    text-align: center;
-    font-style: italic;
-}
 hr {
     border: 2px dashed #888;
 }
 body {
     background-color: aliceblue;
+}
+#am-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
 }
