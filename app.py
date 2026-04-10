@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import sqlite3
 
 app = Flask(__name__)
@@ -10,7 +10,23 @@ def get_db():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    conn = get_db()
+    users = conn.execute("SELECT * FROM users").fetchall()
+    conn.close()
+    return render_template("index.html", users=users)
+
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    username = request.form["username"]
+
+    conn = sqlite3.connect("db.sqlite3")
+    conn.execute("INSERT INTO users (username) VALUES (?)", (username,))
+    conn.commit()
+    conn.close()
+
+    return "Saved to DB: " + username
+
 
 if __name__ == "__main__":
     app.run()
