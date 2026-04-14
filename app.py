@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, flash
 import sqlite3
 import os
 
 app = Flask(__name__)
+app.secret_key = "supersecret123"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "db.sqlite3")
@@ -22,15 +23,22 @@ def home():
 
 @app.route("/submit", methods=["POST"])
 def submit():
-    username = request.form["username"]
+    username = request.form["username"].strip()
 
-    conn = sqlite3.connect("db.sqlite3")
-    conn.execute("INSERT INTO users (username) VALUES (?)", (username,))
-    conn.commit()
-    conn.close()
+    try:
+        with sqlite3.connect("db.sqlite3") as conn:
+            conn.execute(
+                "INSERT INTO users (username) VALUES (?)",
+                (username,)
+            ) 
 
-    return "Saved to DB: " + username
+    except sqlite3.IntegrityError:
+        pass
 
+    except sqlite3.OperationalError:
+        pass
+
+    return redirect("/")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="127.0.0.1", port=8080, debug=True)

@@ -21,5 +21,15 @@ body {
 }
 #am-quote {
     display: flex;
+    justify-content: center;
+    font-size: 21px;
+}
+#am-submit-button {
+}
+#am-user-input {
+}
+.home-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }

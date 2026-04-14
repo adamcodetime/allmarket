@@ -6,14 +6,16 @@
     <title>AllMarket</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index_styles.css') }}">=
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
+    <link rel="icon" href="{{ url_for('static', filename='favicon.jpg') }}">
 </head>
 <body>
     <h1 class="am-title" id="am-title">AllMarket</h1>
-    <p class="am-quote">“The biggest risk is not taking any risk.” - Mark Zuckerberg, 2011</p>
+    <p class="am-quote" id="am-quote">“The biggest risk is not taking any risk.” - Mark Zuckerberg, 2011</p>
     <hr>
-    <form action="/submit" method="POST">
-        <input type="text" name="username" placeholder="Username">
-        <button type="submit">Submit</button>
+    <div class="home-container">
+    <form action="/submit" method="POST" id="am-user-form">
+        <input id="am-user-input" type="text" name="username" placeholder="Username">
+        <button id="am-submit-button" type="submit">Submit</button>
     </form>
     {% if users %}
         <ul>
@@ -24,6 +26,7 @@
     {% else %}
         <p>No users yet.</p>
     {% endif %}
+    </div>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 </html>
