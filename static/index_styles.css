@@ -15,7 +15,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;
+    height: 60px;
     overflow: hidden;
     white-space: nowrap;
+}
+#am-quote {
+    display: flex;
+    align-items: center;
 }
