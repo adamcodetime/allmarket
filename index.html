@@ -13,19 +13,12 @@
     <p class="am-quote" id="am-quote">“The biggest risk is not taking any risk.” - Mark Zuckerberg, 2011</p>
     <hr>
     <div class="home-container">
-    <form action="/submit" method="POST" id="am-user-form">
+    <form action="/" method="POST" id="am-user-form">
         <input id="am-user-input" type="text" name="username" placeholder="Username">
+        <input id="am-user-input" type="password" name="password" placeholder="Password">
         <button id="am-submit-button" type="submit">Submit</button>
     </form>
-    {% if users %}
-        <ul>
-            {% for user in users %}
-                <li>{{ user.username }}</li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No users yet.</p>
-    {% endif %}
+    
     </div>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
