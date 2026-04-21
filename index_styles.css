@@ -1,15 +1,23 @@
+:root {
+    --blue-outline: #153B50;
+    --blue-background: #5792b4;
+    --primary-color: #CDC5B4;
+    --secondary-color: #813405;
+    --tertiary-color: #E55812;
+}
 * {
     font-family: 'Courier New', Courier, monospace;
 }
 .am-title {
     font-weight: bolder;
     text-align: center;
+    color: var(--primary-color);
 }
 hr {
-    border: 2px dashed #888;
+    border: 2px dashed var(--blue-outline);
 }
 body {
-    background-color: aliceblue;
+    background-color: var(--blue-background);
 }
 #am-title {
     display: flex;
@@ -23,6 +31,9 @@ body {
     display: flex;
     justify-content: center;
     font-size: 21px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: var(--primary-color);
 }
 #am-submit-button {
 }
