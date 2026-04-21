@@ -1,6 +1,6 @@
 let title = document.getElementById("am-title");
 
-const words = ["AllMarket"];
+const words = ["AllMarket", "Trading e-commerce"];
 let i = 0;      // which word
 let j = 0;      // which letter
 let deleting = false;
@@ -15,7 +15,7 @@ function loop() {
 
         if (j === current.length) {
             deleting = true;
-            setTimeout(loop, 800); // pause before deleting
+            setTimeout(loop, 1000); // pause before deleting
             return;
         }
     } else {
