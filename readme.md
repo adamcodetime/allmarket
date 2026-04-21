@@ -1,1 +1,0 @@
-first u gotta delete pre built db then run init_db.py then the app.py
