@@ -27,7 +27,8 @@ body, html {
     background-color: var(--sidebar-primary);
     color: white;
     padding: 20px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
+    box-shadow: 10px 0 15px -5px var(--sidebar-secondary);
 }
 .sidebar h2 {
     display: flex;
