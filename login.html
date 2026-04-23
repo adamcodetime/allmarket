@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AllMarket</title>
-    <link rel="stylesheet" href="index_styles.css">
+    <title>AllMarket Login</title>
+    <link rel="stylesheet" href="login_styles.css">
     <link rel="stylesheet" href="https://unpkg.com/98.css"/>
     <link rel="icon" href="favicon.png">
 </head>
 <body>
-    <!-- navbar -->
     <div class="container">
         <div class="sidebar">
             <h2>Menu</h2>
@@ -21,10 +20,15 @@
 
         <div class="content">
             <h1 class="am-title" id="am-title">AllMarket</h1>
-            <p class="am-quote" id="am-quote">“The biggest risk is not taking any risk.” - Mark Zuckerberg, 2011</p>
+            <div class="login-container">
+                <form action="/" method="POST" id="am-user-form">
+                    <input id="am-user-input" type="text" name="username" placeholder="Username">
+                    <input id="am-user-input" type="password" name="password" placeholder="Password">
+                    <button id="am-submit-button" type="submit">Submit</button>
+                </form>
+            </div>
             <hr>
         </div>
     </div>
-    <script src="main.js"></script>
 </body>
 </html>
