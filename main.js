@@ -15,7 +15,7 @@ function loop() {
 
         if (j === current.length) {
             deleting = true;
-            setTimeout(loop, 1000); // pause before deleting
+            setTimeout(loop, 3000); // pause before deleting
             return;
         }
     } else {
