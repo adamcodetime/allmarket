@@ -99,3 +99,18 @@ body {
     font-weight: bolder;
     color: var(--primary-color-2);
 }
+.center-a {
+    display: flex;
+    justify-content: center;
+    color: var(--tertiary-color);
+    text-decoration: none;
+}
+.center-a > h2:hover {
+    color: var(--sidebar-secondary);
+}
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
